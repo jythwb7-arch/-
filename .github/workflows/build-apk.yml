@@ -22,7 +22,9 @@ jobs:
 
       - name: Extract Android project
         run: |
-          unzip -o RaqmiAndroidProject.zip -d project
+  find project -name settings.gradle -print
+  find project -name build.gradle -print
+  gradle -p project/RaqmiAndroidProject assembleDebug
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
